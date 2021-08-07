@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>University Library</title>
+		<link rel="stylesheet" href="css/bootstrap-grid.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+
+		<script defer src="js/bootstrap.min.js"></script>
+		<title>View Books</title>
+	</head>
+	<body>
+	<nav>
+            <ul>
+                
+                <li><a href="AddBookForm">Add Book</a></li>
+                <li><a href="ViewBook">View Book</a></li>
+                <li><a href="IssueBookForm">Issue Book</a></li>
+                <li><a href="ViewIssuedBook">View Issued</a></li>
+                <li><a href="ReturnBookForm">Return Book</a></li>
+                <li><a href="LogoutLibrarian">Log Out</a></li>
+            </ul>
+        </nav>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<h2>All books</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="book">
+						<div class="book-image">
+							<img src="https://images-na.ssl-images-amazon.com/images/I/51Yfok3c%2B0L._AC_UL200_SR200,200_.jpg" alt="" />
+						</div>
+						<div class="book-actions">
+							<h5 class="bookname">Welcome to consent</h5>
+							<p class="bookid"><span>Book ID: </span>1234</p>
+							<p class="author"><span>Author: </span>XYZ</p>
+							<p class="publisher"><span>Published By: </span>XYZ</p>
+							<p class="quantity"><span>Quantity: </span>2</p>
+							<p class="issued"><span>Issued: </span>2</p>
+							<a href="DeleteBook?bookid="+bean.getBookid()+"" class="button button-secondary">Delete Book</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

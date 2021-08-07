@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
+
+$color-black-1: hsl(0, 0%, 20%);
+$color-black-2: hsla(0, 0%, 0%, 0.3);
+$color-black-shadow: hsla(0, 0%, 0%, 0.12);
+$color-white: hsl(0, 0%, 100%);
+$color-blue: hsl(236, 73%, 37%);
+$color-blue-2: hsla(236, 73%, 37%, 0.5);
+$color-blue-shadow: hsla(236, 73%, 37%, 0.12);
+
+// prettier-ignore
+$blue-box-shadow-large:
+                    0 0.1rem 0.1rem $color-blue-shadow,
+                    0 0.2rem 0.2rem $color-blue-shadow, 
+                    0 0.4rem 0.4rem $color-blue-shadow, 
+                    0 0.8rem 0.8rem $color-blue-shadow,
+                    0 1.6rem 1.6rem $color-blue-shadow;
+// prettier-ignore
+$blue-box-shadow-small:
+                    0 0.1rem 0.1rem $color-blue-shadow,
+                    0 0.2rem 0.2rem $color-blue-shadow, 
+                    0 0.4rem 0.4rem $color-blue-shadow,
+                    0 0.8rem 0.8rem $color-blue-shadow;
+// prettier-ignore
+$black-box-shadow-large:
+                    0 0.1rem 0.1rem $color-black-shadow,
+                    0 0.2rem 0.2rem $color-black-shadow, 
+                    0 0.4rem 0.4rem $color-black-shadow, 
+                    0 0.8rem 0.8rem $color-black-shadow,
+                    0 1.6rem 1.6rem $color-black-shadow;
+// prettier-ignore
+$black-box-shadow-small:
+                    0 0.1rem 0.1rem $color-black-shadow,
+                    0 0.2rem 0.2rem $color-black-shadow, 
+                    0 0.4rem 0.4rem $color-black-shadow;
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	font-family: "Nunito", sans-serif;
+}
+.pt-5 {
+	padding-top: calc(5rem / 1.6);
+}
+.pt-10 {
+	padding-top: calc(10rem / 1.6);
+}
+.container-fluid {
+	height: 100%;
+}
+
+h1 {
+	text-align: center;
+	font-size: calc(4rem / 1.6);
+	color: $color-black-1;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+h2 {
+	text-align: center;
+	font-size: calc(3rem / 1.6);
+	color: $color-black-1;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+h4 {
+	text-align: center;
+	font-size: calc(2rem / 1.6);
+	color: $color-black-1;
+}
+.form-label {
+	margin-top: 0.5rem;
+	font-weight: 600;
+}
+.form-control {
+	padding: 0.5rem 0.75rem;
+}
+
+input,
+button {
+	font-family: inherit;
+	border-radius: 5px;
+	border: 10px solid $color-black-2;
+}
+
+input:focus {
+	border-color: $color-black-2 !important;
+	box-shadow: $black-box-shadow-small !important;
+}
+.button,
+a.button {
+	padding: 8px 20px;
+	font-size: 16px;
+	font-weight: 400;
+	transition: all 0.15s ease-out;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 5px;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&-primary {
+		color: #1a23a5;
+		border: 0.1rem solid #1a23a5;
+		background-color: #fff;
+		&:hover {
+			color: $color-white;
+			background-color: $color-blue;
+			// prettier-ignore
+			box-shadow: $blue-box-shadow-small;
+		}
+	}
+
+	&-secondary {
+		color: $color-black-1;
+		border: 0.1rem solid $color-black-1;
+		background-color: $color-white;
+
+		&:hover {
+			color: $color-white;
+			background-color: $color-black-1;
+			// prettier-ignore
+			box-shadow: $black-box-shadow-small;
+		}
+	}
+
+	&-w100 {
+		width: 100%;
+	}
+}
+
+nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: $black-box-shadow-small;
+
+	ul {
+		margin-bottom: 0;
+		padding-left: 0;
+		list-style-type: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	li {
+		padding: 20px 20px;
+	}
+
+	a {
+		text-align: center;
+		text-decoration: none;
+		color: $color-black-1;
+		position: relative;
+		font-weight: 600;
+
+		&::after {
+			content: "";
+			position: absolute;
+
+			bottom: -6px;
+			left: 0px;
+			width: 100%;
+			height: 4px;
+			transform: scaleY(0);
+			background-color: $color-blue-2;
+			transition: all 0.1s ease-out;
+			transform-origin: bottom;
+		}
+		&:hover {
+			color: $color-black-1;
+			&::after {
+				transform: scaleY(1);
+			}
+		}
+	}
+}
+
+.form-container {
+	border: 0.1rem solid $color-black-shadow;
+	border-radius: 1rem;
+	padding: 3rem 4rem;
+	// prettier-ignore
+	box-shadow: $black-box-shadow-large;
+}
+
+.librarian-action-link {
+	margin: auto;
+	width: 100%;
+	aspect-ratio: 1/1.16;
+	color: #1a23a5;
+	border: 0.1rem solid #1a23a5;
+	border-radius: 5px;
+	background-color: #fff;
+	transition: all 0.15s ease-out;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+
+	.link-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.items {
+		display: grid;
+		justify-content: center;
+		gap: 20px;
+
+		i {
+			font-size: 2rem;
+			text-align: center;
+		}
+
+		p {
+			font-size: 18px;
+			font-weight: 600;
+			max-width: 10ch;
+			text-align: center;
+		}
+	}
+
+	&:hover {
+		background-color: $color-blue;
+		color: $color-white;
+		// prettier-ignore
+		box-shadow: $blue-box-shadow-large;
+	}
+}
+
+.book {
+	width: 90%;
+	margin: 1rem auto 0;
+	border: 0.1rem solid $color-black-2;
+	border-radius: 1rem;
+	//prettier-ignore
+	box-shadow: $black-box-shadow-small;
+
+	padding-top: 0.2rem;
+
+	.book-image {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+
+		img {
+			width: 60%;
+		}
+	}
+
+	.book-actions {
+		padding: 1rem 2rem;
+		display: grid;
+		gap: 0.4rem;
+		border-top: 0.1rem solid $color-black-2;
+
+		.bookname {
+			margin: 0.6rem 0rem 1rem;
+
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		p {
+			font-size: 16px;
+			margin-bottom: 0;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			span {
+				font-weight: 600;
+			}
+		}
+		.button {
+			margin-top: 10px;
+		}
+	}
+}

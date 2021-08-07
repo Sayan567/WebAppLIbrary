@@ -1,0 +1,1 @@
+insert into "LIBRARIAN" values (101,'Admin', 'admin', 'admin@gmail.com', 1234567890);​
